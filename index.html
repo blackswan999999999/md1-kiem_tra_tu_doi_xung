@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Kiểm tra từ đối xứng</h1>
+<input type="text" id="s1" ><button onclick="isPalindrome()"> Kiểm tra</button>
+</body>
+<script>
+    //C1:Kiểm tra phần từ 2 đầu của mảng ->> giữa
+    // ( nếu mảng lẻ thì chỉ có duy nhât 1 phần tử ở vị trí giữa, ko cần kiểm tra phàn từ này)
+    function isPalindrome(str) {
+        str = document.getElementById('s1').value;
+        console.log(str.length/2)
+        for (let i = 0; i < str.length / 2; i++) {
+            if (str[i] != str[str.length - i - 1]) {
+                alert(`${str} không phải từ đối xứng`)
+                return;
+            } else {
+                alert(`${str} Là từ đối xứng `)
+                return;
+            }
+        }
+    }
+
+    //C2 Kiểm tra đảo đảo ngược của str có bằng với str không
+
+    // function isPalindrome(str) {
+    //     str=document.getElementById('s1').value;
+    //     if (str=== str.split().reverse().join()){
+    //         alert(`${str} Là từ đối xứng `)
+    //         return;
+    //     }else {
+    //         alert(`${str} không phải từ đối xứng`)
+    //         return;
+    //     }
+    // }
+
+
+    //C3 tương tự cách 2
+    // function checkPalindrome() {
+    //     let str = document.getElementById('txt').value;
+    //     let reverseStr = '';
+    //     let strChar = [];
+    //     //xếp vào stack
+    //     for (let i = 0; i < str.length; i++) {
+    //         strChar.push(str[i]);
+    //     }
+    //     console.log('strChar ==', strChar);
+    //     //F.I.L.O
+    //     for (let i = 0; i < str.length; i++) {
+    //         reverseStr += strChar.pop();
+    //     }
+    //     console.log('reverseStr =', reverseStr);
+    //     //so sánh 2 chuỗi
+    //     if (str === reverseStr) {
+    //         console.log(`${str} is a palindrome`)
+    //     } else {
+    //         console.log(`${str} is not a palindrome`)
+    //     }
+    // }
+
+</script>
+</html>
